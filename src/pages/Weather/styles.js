@@ -8,6 +8,11 @@ export const Container = styled.div`
     justify-content: center;
     height: 100vh;
     width: 100vw;
+
+    @media screen and (max-width: 400px) {
+        width: 100%;
+        height: 100%;
+    }
 `;
 
 const rotate = keyframes`
@@ -37,6 +42,10 @@ export const Div = styled.div`
 export const DivII = styled.div`
     display: flex;
     gap: 20px;
+
+    @media screen and (max-width: 400px) {
+        box-sizing: border-box;
+    }
 `;
 
 export const DivIII = styled.div`
@@ -51,6 +60,11 @@ export const DivIV = styled.div`
     background-color: ${(props) => props.color || props.theme.colors.gray700};
     padding: 20px;
     border-radius: 20px;
+
+    @media screen and (max-width: 400px) {
+        width: 19.6rem;
+        border-radius: 20px;
+    }
 `;
 
 export const Flex = styled.div`

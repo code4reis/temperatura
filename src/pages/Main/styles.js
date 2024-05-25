@@ -10,6 +10,11 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 100vw;
+
+    @media screen and (max-width: 400px) {
+        width: 100%;
+    }
 `;
 
 export const Search = styled.div`
@@ -27,6 +32,10 @@ export const Input = styled.input`
 
     &:focus {
         outline: none;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 100%;
     }
 `;
 
