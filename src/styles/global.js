@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   html, body, #root {
     min-height: 100%;
+    overflow: hidden;
   }
   body {
     background: ${(props) => props.theme.colors.gray900};

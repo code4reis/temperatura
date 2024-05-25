@@ -1,17 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { Container } from "./styles";
+import { Container, Input, Search, SearchFa, Location } from "./styles";
 
-export default function Main() {
+const Main = () => {
+  const [inputValue, setInputValue] = useState('');
+  const navigate = useNavigate();
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleSearchClick = () => {
+    if (inputValue) {
+      navigate(`/weather/${inputValue}`)
+    }
+  };
+
   return (
     <Container>
-      <img
-        src="https://devsamurai-materials.s3.amazonaws.com/templates/avatar-gradient-dark.svg"
-        height="256"
-        alt="Dev Samurai"
-      />
-      <h1>Fala Samurai!</h1>
-      <p>Esse é o template typescript básico da Dev Samurai para React.</p>
+      <Location />
+      <Search>
+        <Input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="Digite a cidade"
+          />
+        <SearchFa
+          onClick={handleSearchClick}
+          />
+      </Search>
     </Container>
   );
-}
+};
+
+export default Main;
