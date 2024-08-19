@@ -60,6 +60,7 @@ export const DivIV = styled.div`
     background-color: ${(props) => props.color || props.theme.colors.gray700};
     padding: 20px;
     border-radius: 20px;
+    margin-top: 10px;
 
     @media screen and (max-width: 400px) {
         width: 19.6rem;
